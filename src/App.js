@@ -1,8 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
+import SideBar from "./sidebar";
 
 function App() {
-    return <h1 className="bg-red-500 text-black">Hola Call ME</h1>;
+    return <SideBar />;
 }
 
 export default App;
