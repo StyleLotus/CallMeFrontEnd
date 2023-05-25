@@ -3,10 +3,17 @@ import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { TiChartArea, TiChartLine, TiChartBar } from "react-icons/ti";
+import {
+  HiShoppingCart,
+  HiShoppingBag,
+  HiUserAdd,
+  HiPlus,
+} from "react-icons/hi";
+
 import profilePicture from "./ProfilePicture.jpg";
-import User1 from "./User1.jpg"
-import User2 from "./User2.jpg"
-import User3 from "./User3.jpg"
+import User1 from "./User1.jpg";
+import User2 from "./User2.jpg";
+import User3 from "./User3.jpg";
 
 const Main = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -140,7 +147,9 @@ const Main = () => {
       </div>
       <div>
         <div className="flex flex-row absolute top-0 right-0">
-          <div className="m-2">Hola, <span className="text-red-500 font-extrabold">James</span></div>
+          <div className="m-2">
+            Hola, <span className="text-red-500 font-extrabold">James</span>
+          </div>
           <img
             src={profilePicture}
             alt="Profile"
@@ -148,15 +157,84 @@ const Main = () => {
           />
         </div>
         <div className="mt-16">
-          <h1 className="font-bold text-2xl">
-            Recent Updates
-          </h1>
-          <div className="rounded-2xl shadow-2xl bg-white">
-              <div className="p-5 flex">
-                <img src={User1} alt="" className="rounded-full w-8 h-8"></img>
-                <span><span className="font-bold m-2 text-sm">Myke Tyson</span> receiver his order of Nigh</span>
-              </div>
+          <h1 className="font-bold text-2xl">Recent Updates</h1>
+          <div className="rounded-2xl shadow-2xl ">
+            <div className="px-5 flex py-2 ">
+              <img src={User1} alt="" className="rounded-full w-8 h-8"></img>
+              <span className="text-sm">
+                <span className="font-bold m-2 text-sm">Myke Tyson</span>
+                receiver his order of Night
+              </span>
+            </div>{" "}
+            <div className="px-5 py-2 flex">
+              <img src={User2} alt="" className="rounded-full w-8 h-8"></img>
+              <span className="text-sm">
+                <span className="font-bold m-2 text-sm">Harry Potter</span>
+                declined her order of 2 DJ Air Drone
+              </span>
+            </div>{" "}
+            <div className="px-5 py-2 flex">
+              <img src={User3} alt="" className="rounded-full w-8 h-8"></img>
+              <span className="text-sm">
+                <span className="font-bold m-2 text-sm">Ama Tyler</span>
+                receiver his order of LAVENDER KF102 Drone
+              </span>
+            </div>
           </div>
+        </div>
+        <div>
+          <h1 className="font-bold text-2xl mt-2">Sales Analytics</h1>
+          <div className="p-2 rounded-2xl shadow-2xl flex mt-3">
+            <div className="bg-blue-400 w-10 h-10 flex justify-center items-center rounded-full m-2">
+              <HiShoppingCart className="m-2" />
+            </div>
+            <span className="flex flex-col">
+              <h2 className="font-bold">ONLINE ORDERS</h2>
+              <h3>Last 24 Hours</h3>
+            </span>
+            <h4 className="flex justify-center items-center mx-5 font-bold text-green-600">
+              +29%
+            </h4>
+            <h4 className="flex justify-center items-center mx-5 font-bold">
+              3950
+            </h4>
+          </div>
+          <div className="p-2 rounded-2xl shadow-2xl flex mt-3">
+            <div className="bg-red-400 w-10 h-10 flex justify-center items-center rounded-full m-2">
+              <HiShoppingBag className="m-2" />
+            </div>
+            <span className="flex flex-col">
+              <h2 className="font-bold">OFFLINE ORDERS</h2>
+              <h3>Last 24 Hours</h3>
+            </span>
+            <h4 className="flex justify-center items-center mx-5 font-bold text-red-600">
+              -11%
+            </h4>
+            <h4 className="flex justify-center items-center mx-5 font-bold">
+              800
+            </h4>
+          </div>{" "}
+          <div className="p-2 rounded-2xl shadow-2xl flex mt-3">
+            <div className="bg-blue-400 w-10 h-10 flex justify-center items-center rounded-full m-2">
+              <HiUserAdd className="m-2" />
+            </div>
+            <span className="flex flex-col">
+              <h2 className="font-bold">NEW CUSTOMERS</h2>
+              <h3>Last 24 Hours</h3>
+            </span>
+            <h4 className="flex justify-center items-center mx-5 font-bold text-green-600">
+              +25%
+            </h4>
+            <h4 className="flex justify-center items-center mx-5 font-bold">
+              849
+            </h4>
+          </div>
+          <button className="w-full">
+          <div className="rounded-2xl border-2 border-dashed border-blue-600 flex justify-center items-center mt-3 p-4">
+            <HiPlus />
+            <h1>Add Product</h1>
+          </div>
+          </button>
         </div>
       </div>
     </>
