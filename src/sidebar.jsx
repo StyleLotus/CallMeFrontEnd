@@ -3,11 +3,7 @@ import CallMeIcon from "./CallMeIcon.png";
 import { RiDashboardFill, RiSettingsFill } from "react-icons/ri";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { FaListAlt, FaComment, FaEdit, FaPlus } from "react-icons/fa";
-import {
-  IoBarChartSharp,
-  IoAlertCircle,
-  IoExitSharp,
-} from "react-icons/io5";
+import { IoBarChartSharp, IoAlertCircle, IoExitSharp } from "react-icons/io5";
 import { BiRightArrow, BiLeftArrow } from "react-icons/bi";
 
 const SideBar = () => {
@@ -19,7 +15,7 @@ const SideBar = () => {
   const aStyle = `flex rounded p-1 m-1  ${
     isSideBarOpen
       ? "hover:ml-3 hover:border-l-4 hover:border-blue-500 hover:bg-blue-100 transition duration-600 ease"
-      : "hover:bg-blue-400"
+      : "hover:bg-blue-200  transition duration-600 ease hover:border-blue-400 hover:border-2"
   }`;
   const iconStyle = "m-1 text-2xl";
   const menuText = `text-md ${isSideBarOpen ? "" : "hidden"}`;
@@ -35,12 +31,25 @@ const SideBar = () => {
         <h1 className={`text-2xl ${isSideBarOpen ? "" : "hidden"}`}>
           Call<span className="text-red-500 font-bold">ME</span>
         </h1>
-        {isSideBarOpen ? <BiLeftArrow 
-          onClick={toggleSiderBar}
-          className={`${isSideBarOpen ? "absolute left-36 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1" : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"}`}/> : <BiRightArrow 
-          onClick={toggleSiderBar}
-          className={`${isSideBarOpen ? "absolute left-36 text-2xl bg-blue-200 border-blue-200 border-2 rounded-full m-3 top-1" : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"}`}/>}
-         
+        {isSideBarOpen ? (
+          <BiLeftArrow
+            onClick={toggleSiderBar}
+            className={`${
+              isSideBarOpen
+                ? "absolute left-36 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1"
+                : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"
+            }`}
+          />
+        ) : (
+          <BiRightArrow
+            onClick={toggleSiderBar}
+            className={`${
+              isSideBarOpen
+                ? "absolute left-36 text-2xl bg-blue-200 border-blue-200 border-2 rounded-full m-3 top-1"
+                : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"
+            }`}
+          />
+        )}
       </div>
       <a href="1">
         <span className={aStyle}>
