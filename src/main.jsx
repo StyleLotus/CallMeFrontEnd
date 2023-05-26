@@ -9,6 +9,8 @@ import {
   HiUserAdd,
   HiPlus,
 } from "react-icons/hi";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 
 import profilePicture from "./ProfilePicture.jpg";
 import User1 from "./User1.jpg";
@@ -16,8 +18,55 @@ import User2 from "./User2.jpg";
 import User3 from "./User3.jpg";
 
 const Main = () => {
+  ChartJS.register(ArcElement, Tooltip, Legend);
+
   const [selectedDate, setSelectedDate] = useState(null);
 
+  const data1 = {
+    label: ["red", "white"],
+    datasets: [
+      {
+        data: [70, 30],
+        backgroundColor: ["#FF6384", "#FFFFFF"],
+        hoverBackgroundColor: ["#FF6360", "#FFFF00"],
+      },
+    ],
+  };
+
+  const options1 = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
+  const data2 = {
+    label: ["green", "white"],
+    datasets: [
+      {
+        data: [50, 50],
+        backgroundColor: ["#00FF7F", "#FFFFFF"],
+        hoverBackgroundColor: ["#00FF66", "#FFFF00"],
+      },
+    ],
+  };
+
+  const options2 = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
+  const data3 = {
+    label: ["blue", "white"],
+    datasets: [
+      {
+        data: [80, 20],
+        backgroundColor: ["#00FFFF", "#FFFFFF"],
+        hoverBackgroundColor: ["#00FFCC", "#FFFF00"],
+      },
+    ],
+  };
+
+  const options3 = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
@@ -37,7 +86,7 @@ const Main = () => {
             className="mt-1 mx-3 p-1 rounded-md bg-gray-300"
           />
         </div>
-        <div className="grid grid-cols-3 w-10/12 gap-2   m-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 w-10/12 gap-2   m-auto">
           <div className="grid grid-cols-2 rounded-2xl mt-5 shadow-2xl border-2 p-4">
             <div className="flex flex-col ">
               <TiChartArea className="text-white text-2xl p-2 bg-indigo-700 rounded-full w-10 h-10" />
@@ -45,10 +94,8 @@ const Main = () => {
               <h4 className="font-extrabold mt-2">$23.000</h4>
               <h5 className="text-gray-400">Last 24 Hours</h5>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="rounded-full h-20 w-20 bg-blue-500 flex items-center justify-center">
-                <div className="h-14 w-14 bg-white rounded-full"></div>
-              </div>
+            <div className="w-full h-24 p-4 m-auto">
+              <Doughnut data={data1} options={options1} />
             </div>
           </div>
           <div className="grid grid-cols-2 rounded-2xl mt-5  shadow-2xl border-2 p-4">
@@ -58,10 +105,8 @@ const Main = () => {
               <h4 className="font-extrabold mt-2">$33.000</h4>
               <h5 className="text-gray-400">Last 24 Hours</h5>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="rounded-full h-20 w-20 bg-blue-500 flex items-center justify-center">
-                <div className="h-14 w-14 bg-white rounded-full"></div>
-              </div>
+            <div className="w-full h-24 p-4 m-auto">
+              <Doughnut data={data2} options={options2} className="w-10 h-10" />
             </div>
           </div>
           <div className="grid grid-cols-2 rounded-2xl mt-5 shadow-2xl border-2 p-4">
@@ -71,15 +116,13 @@ const Main = () => {
               <h4 className="font-extrabold mt-2">$11.000</h4>
               <h5 className="text-gray-400">Last 24 Hours</h5>
             </div>
-            <div className="flex justify-center items-center">
-              <div className="rounded-full h-20 w-20 bg-blue-500 flex items-center justify-center">
-                <div className="h-14 w-14 bg-white rounded-full"></div>
-              </div>
+            <div className="w-full h-24 p-4 m-auto">
+              <Doughnut data={data3} options={options3} />
             </div>
           </div>
         </div>
         <h2 className="font-bold m-3 mx-8 text-2xl">Recent Orders</h2>
-        <table className="border text-center rounded-2xl shadow-2xl w-10/12 m-auto mx-22">
+        <table className="border text-center rounded-2xl shadow-2xl sm:12/12 md:w-10/12 m-auto mx-22">
           <thead className=" p-2">
             <tr className="px-5">
               <th className="p-4 m-4">Product Name</th>
@@ -156,9 +199,9 @@ const Main = () => {
             className="rounded-full w-10 h-10"
           />
         </div>
-        <div className="mt-16">
+        <div className="mt-16 block sm:">
           <h1 className="font-bold text-2xl">Recent Updates</h1>
-          <div className="rounded-2xl shadow-2xl ">
+          <div className="rounded-2xl shadow-2xl">
             <div className="px-5 flex py-2 ">
               <img src={User1} alt="" className="rounded-full w-8 h-8"></img>
               <span className="text-sm">
@@ -176,8 +219,8 @@ const Main = () => {
             <div className="px-5 py-2 flex">
               <img src={User3} alt="" className="rounded-full w-8 h-8"></img>
               <span className="text-sm">
-                <span className="font-bold m-2 text-sm">Ama Tyler</span>
-                receiver his order of LAVENDER KF102 Drone
+                <span className="font-bold m-2 text-sm">Voldermort</span>
+                receiver his order of NOSE KF102 Drone
               </span>
             </div>
           </div>
@@ -230,10 +273,10 @@ const Main = () => {
             </h4>
           </div>
           <button className="w-full">
-          <div className="rounded-2xl border-2 border-dashed border-blue-600 flex justify-center items-center mt-3 p-4">
-            <HiPlus />
-            <h1>Add Product</h1>
-          </div>
+            <div className="rounded-2xl border-2 border-dashed border-blue-600 flex justify-center items-center mt-3 p-4">
+              <HiPlus />
+              <h1>Add Product</h1>
+            </div>
           </button>
         </div>
       </div>

@@ -22,13 +22,13 @@ const SideBar = () => {
 
   return (
     <div
-      className={`h-screen ${
+      className={` h-screen ${
         isSideBarOpen ? "w-44" : "w-19"
       } mx-4 shadow-l-2xl border-r-4 border-blue-200     `}
     >
       <div className="m-4 flex">
         <img src={CallMeIcon} alt="" className="w-6 h-6 mr-1 mt-1" />
-        <h1 className={`text-2xl ${isSideBarOpen ? "" : "hidden"}`}>
+        <h1 className={`text-2xl  ${isSideBarOpen ? "" : "hidden"}`}>
           Call<span className="text-red-500 font-bold">ME</span>
         </h1>
         {isSideBarOpen ? (
@@ -36,8 +36,8 @@ const SideBar = () => {
             onClick={toggleSiderBar}
             className={`${
               isSideBarOpen
-                ? "absolute left-36 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1"
-                : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"
+                ? "absolute left-40 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1 "
+                : "absolute bg-blue-200 left-14 text-2xl border-2 border-blue-200 rounded-full m-3 top-1 "
             }`}
           />
         ) : (
@@ -45,8 +45,8 @@ const SideBar = () => {
             onClick={toggleSiderBar}
             className={`${
               isSideBarOpen
-                ? "absolute left-36 text-2xl bg-blue-200 border-blue-200 border-2 rounded-full m-3 top-1"
-                : "absolute bg-blue-200 left-12 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"
+                ? "absolute left-40 text-2xl bg-blue-200 border-blue-200 border-2 rounded-full m-3 top-1"
+                : "absolute bg-blue-200 left-14 text-2xl border-2 border-blue-200 rounded-full m-3 top-1"
             }`}
           />
         )}
