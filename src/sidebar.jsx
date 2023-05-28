@@ -23,7 +23,7 @@ const SideBar = () => {
   return (
     <div
       className={` h-screen ${
-        isSideBarOpen ? "w-44" : "w-19"
+        isSideBarOpen ? "w-40" : "w-16"
       } mx-4 shadow-l-2xl border-r-4 border-blue-200     `}
     >
       <div className="m-4 flex">
