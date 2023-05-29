@@ -36,7 +36,7 @@ const SideBar = () => {
             onClick={toggleSiderBar}
             className={`${
               isSideBarOpen
-                ? "absolute left-40 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1 "
+                ? "absolute left-36 bg-blue-200 border-blue-200 text-2xl border-2 rounded-full m-3 top-1 "
                 : "absolute bg-blue-200 left-14 text-2xl border-2 border-blue-200 rounded-full m-3 top-1 "
             }`}
           />
