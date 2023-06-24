@@ -14,9 +14,9 @@ const Productos = () => {
 	const [Color, setColor] = useState("");
 	let [CantidadActual, setCantidadActual] = useState("");
 	const UsuarioNumber = 2;
-	const [Usuario, setUsuario] = useState(UsuarioNumber);
+	const [Usuario] = useState(UsuarioNumber);
 	const productImgRef = useRef(null);
-	const rutaServidorJames = "https://9a50-2800-484-3f84-7f97-adc5-b64f-8e1a-caf.ngrok-free.app" + "/productos";
+	const rutaServidorJames = "https://99fb-2800-484-3f75-6cac-5898-3480-ff5-2891.ngrok-free.app" + "/productos";
 
 	const fetchData = () => {
 		axios

@@ -4,15 +4,17 @@ import Main from "./main";
 import Productos from "./Productos";
 import Store from "./Store";
 import SignUpScreen from "./SignUpScreen";
+import LoginScreen from "./LoginScreen";
 
 function App() {
 	return (
 		<div className="flex">
-			<SideBar />
+			{/* <SideBar /> */}
 			{/* <Main/>*/}
-			{/*<Productos />*/}
+			{/* <Productos /> */}
 			{/*<Store />*/}
-			<SignUpScreen></SignUpScreen>
+			<SignUpScreen />
+			<LoginScreen />
 		</div>
 	);
 }
